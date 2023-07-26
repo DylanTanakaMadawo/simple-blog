@@ -1,6 +1,6 @@
 import React from "react";
-import { LoginPage } from "../../styles";
-import { Button, Typography } from "@mui/material";
+import { LoginPage, TypographyD } from "../../styles";
+import { Button } from "@mui/material";
 
 import { auth, provider } from "../../firebase-config";
 import { signInWithPopup } from "firebase/auth";
@@ -17,9 +17,9 @@ export const LogIn = ({ setIsAuth }) => {
   };
   return (
     <LoginPage>
-      <Typography variant="h4" sx={{ marginBottom: "40px" }}>
+      <TypographyD variant="h4" sx={{ marginBottom: "40px" }}>
         Sign In With Google to Continue
-      </Typography>
+      </TypographyD>
       <Button variant="contained" onClick={signInWithGoogle}>
         Sign In with Google
       </Button>

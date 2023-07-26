@@ -23,19 +23,22 @@ export const Navbar = ({ isAuth, setIsAuth }) => {
       <NavbarLinksContainer>
         <NavbarLinks to="/">Home</NavbarLinks>
       </NavbarLinksContainer>
-      <NavbarLinksContainer>
-        <NavbarLinks to="/createpost">Create Post</NavbarLinks>
-      </NavbarLinksContainer>
+
       {!isAuth ? (
         <NavbarLinksContainer>
           <NavbarLinks to="/login">LogIn</NavbarLinks>
         </NavbarLinksContainer>
       ) : (
-        <NavbarLinks>
-          <Button onClick={logOut} variant="text" sx={{ color: "white" }}>
-            Log Out
-          </Button>
-        </NavbarLinks>
+        <>
+          <NavbarLinksContainer>
+            <NavbarLinks to="/createpost">Create Post</NavbarLinks>
+          </NavbarLinksContainer>
+          <NavbarLinks>
+            <Button onClick={logOut} variant="text" sx={{ color: "white" }}>
+              Log Out
+            </Button>
+          </NavbarLinks>
+        </>
       )}
     </NavbarContainer>
   );

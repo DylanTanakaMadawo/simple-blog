@@ -8,14 +8,14 @@ import { CreatePost } from "./components/CreatePost";
 import { Navbar } from "./components/Navbar";
 
 export const App = () => {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   return (
     <Router>
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/login" element={<LogIn setIsAuth={setIsAuth} />} />
-        <Route path="/createpost" element={<CreatePost />} />
+        <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
       </Routes>
     </Router>
   );

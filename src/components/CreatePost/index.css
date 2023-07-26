@@ -3,6 +3,7 @@
   height: calc(100vh - 80vh);
   display: grid;
   place-items: center;
+  font-family: "Roboto", sans-serif;
 }
 
 .cpContainer {
@@ -56,7 +57,27 @@
   font-size: 18px;
 }
 
+.cpContainer button:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
 input,
 textarea {
   margin-top: 5px;
+}
+
+@media all and (max-width: 500px) {
+  .cpContainer {
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    background-color: black;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
 }
